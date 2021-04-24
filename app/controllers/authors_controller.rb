@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :set_book
+  before_action :set_book, only: [:update, :edit, :show]
 
   def index
     @authors = Author.all
