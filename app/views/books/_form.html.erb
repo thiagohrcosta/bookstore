@@ -1,0 +1,10 @@
+<%= simple_form_for(book) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :genre %>
+  <%= f.input :cover %>
+  <%= f.input :resume %>
+  <%= f.input :year %>
+  <%= f.input :rating %>
+  <%= f.association :author %>
+  <%= f.submit %>
+<% end %>
