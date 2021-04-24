@@ -1,0 +1,10 @@
+<div class="container">
+  <% @authors.each do |author| %>
+    <div>
+      <p><%= author.first_name %></p>
+      <h2><%= author.last_name %></h2>
+      <img style="width: 400px" src="<%= author.photo %>">
+    </div>
+  <% end %>
+
+</div>
