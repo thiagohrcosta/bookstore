@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+
+
   def index
     @books = Book.all
   end
@@ -19,6 +21,20 @@ class BooksController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
+  end
+
 
   private
 
