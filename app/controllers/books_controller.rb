@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :set_author, only: [:new, :create, :update]
   before_action :set_book, only: [:show, :update]
 
   def index
@@ -14,7 +15,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to book_path(@book)
+      redirect_to author_books_path(@books)
     else
       render :new
     end
@@ -36,6 +37,10 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
+  end
+
+  def set_author
+    @author = Author.find(params[:author_id])
   end
 
   def book_params
