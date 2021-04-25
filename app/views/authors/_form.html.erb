@@ -1,6 +1,11 @@
-<%= simple_form_for(author) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :photo %>
-  <%= f.submit %>
-<% end %>
+  <div class="form-text">
+    <h1>New Author </h1>
+  </div>
+    <div class="form-container">
+      <%= simple_form_for(author) do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :photo %>
+        <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+    </div>
